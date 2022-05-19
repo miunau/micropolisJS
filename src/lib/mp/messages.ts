@@ -7,6 +7,8 @@
  *
  */
 
+export const ZOOM_IN = 'Zoom in';
+export const ZOOM_OUT = 'Zoom out';
 export const AUTOBUDGET_CHANGED = "Autobudget changed";
 export const BUDGET_NEEDED = "User needs to budget";
 export const BUDGET_REQUESTED = "Budget window requested";

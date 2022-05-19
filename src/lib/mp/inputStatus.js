@@ -13,6 +13,7 @@ import { EventEmitter } from './eventEmitter';
 import { GameCanvas } from './gameCanvas';
 import { GameTools } from './gameTools';
 import { MiscUtils } from './miscUtils';
+
 const jq = (jqueryProxy).default || jqueryProxy;
 
 
@@ -107,6 +108,8 @@ var keyDownHandler = function(e) {
     case 27:
       this.escape = true;
       handled = true;
+      break;
+    
   }
 
   if (handled)
@@ -160,7 +163,6 @@ var mouseEnterHandler = function(e) {
   else
     jq(this.canvasID).on('click', this.canvasClickHandler);
 };
-
 
 var mouseDownHandler = function(e) {
   if (e.which !== 1 || e.shiftKey || e.altKey || e.ctrlKey || e.metaKey)

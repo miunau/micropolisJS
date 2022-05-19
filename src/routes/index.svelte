@@ -4,7 +4,6 @@
 
   onMount(() => {
 
-    console.log('setup', setup);
     setup();
 
   });
@@ -108,56 +107,69 @@
       <div id="buttons">
         <button id="residentialButton" data-size="3" data-tool="residential" data-colour="lime" class="toolButton unselected">
           <img src="/icons/residential.png" width="24" height="24" alt="Residential ($100)">
+          <span class="hint">Residential<br>$100</span>
         </button>
         <button id="nuclearButton" data-size="4" data-tool="nuclear" data-colour="mistyrose" class="toolButton unselected">
           <img src="/icons/nuclear.png" width="24" height="24" alt="Nuclear ($1000)">
+          <span class="hint">Nuclear<br>$1000</span>
         </button>
         <button id="commercialButton" data-size="3" data-tool="commercial" data-colour="blue" class="toolButton unselected">
           <img src="/icons/commercial.png" width="24" height="24" alt="Commercial ($100)">
+          <span class="hint">Commercial<br>$100</span>
         </button>
         <button id="coalButton" data-size="4" data-tool="coal" data-colour="gray" class="toolButton unselected">
           <img src="/icons/coal.png" width="24" height="24" alt="Coal ($300)">
+          <span class="hint">Coal<br>$300</span>
         </button>
         <button id="industrialButton" data-size="3" data-tool="industrial" data-colour="yellow" class="toolButton unselected">
           <img src="/icons/industrial.png" width="24" height="24" alt="Industrial ($100)">
+          <span class="hint">Industrial<br>$100</span>
         </button>
         <button id="policeButton" data-size="3" data-tool="police" data-colour="darkblue" class="toolButton unselected">
           <img src="/icons/police.png" width="24" height="24" alt="Police ($500)">
+          <span class="hint">Police<br>$500</span>
         </button>
         <button id="roadButton" data-size="1" data-tool="road" data-colour="black" class="toolButton unselected">
           <img src="/icons/road.png" width="24" height="24" alt="Road ($10)">
+          <span class="hint">Road<br>$10</span>
         </button>
         <button id="fireButton" data-size="3" data-tool="fire" data-colour="red" class="toolButton unselected">
           <img src="/icons/fire.png" width="24" height="24" alt="Fire ($500)">
+          <span class="hint">Fire<br>$500</span>
         </button>
         <button id="railButton" data-size="1" data-tool="rail" data-colour="brown" class="toolButton unselected">
           <img src="/icons/rail.png" width="24" height="24" alt="Rail ($10)">
+          <span class="hint">Rail<br>$10</span>
         </button>
         <button id="portButton" data-size="4" data-tool="port" data-colour="dodgerblue" class="toolButton unselected">
           <img src="/icons/port.png" width="24" height="24" alt="Port ($3000)">
+          <span class="hint">Port<br>$3000</span>
         </button>
         <button id="wireButton" data-size="1" data-tool="wire" data-colour="khaki" class="toolButton unselected">
           <img src="/icons/wire.png" width="24" height="24" alt="Wire ($5)">
+          <span class="hint">Wire<br>$5</span>
         </button>
         <button id="stadiumButton" data-size="4" data-tool="stadium" data-colour="indigo" class="toolButton unselected">
           <img src="/icons/stadium.png" width="24" height="24" alt="Stadium ($5000)">
+          <span class="hint">Stadium<br>$5000</span>
         </button>
         <button id="bulldozerButton" data-size="1" data-tool="bulldozer" data-colour="salmon" class="toolButton unselected">
           <img src="/icons/bulldozer.png" width="24" height="24" alt="Bulldozer ($1)">
+          <span class="hint">Bulldozer<br>$1</span>
         </button>
         <button id="airportButton" data-size="6" data-tool="airport" data-colour="violet" class="toolButton unselected">
           <img src="/icons/airport.png" width="24" height="24" alt="Airport ($10000)">
+          <span class="hint">Airport<br>$10000</span>
         </button>
         <button id="queryButton" data-size="1" data-tool="query" data-colour="cyan" class="toolButton unselected">
           <img src="/icons/query.png" width="24" height="24" alt="Query">
+          <span class="hint">Query</span>
         </button>
         <button id="parkButton" data-size="1" data-tool="park" data-colour="darkgreen" class="toolButton unselected">
           <img src="/icons/park.png" width="24" height="24" alt="Park ($10)">
+          <span class="hint">Park<br>$10</span>
         </button>
       </div>
-    </div>
-    <div id="tw" class="z1 rightedge initialHidden">
-      <a class="twitter-share-button" href="https://twitter.com/share?count=none" data-text="I'm city-building like it's 1989! Playing micropolisJS, a HTML5 retro city-builder https://graememcc.github.io/micropolisJS">Tweet</a><script type="text/javascript">window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));</script>
     </div>
     <div id="monstertv" class="alignCenter z1 hidden rightedge padding10 controlShadow open">
       <div id="monsterTVContainer">
@@ -377,7 +389,7 @@
     </header>
     <div id="nagContainer" class="padding10 open">
       <div id="nagMessage" class="alignCenter">
--            Whoa! You've been playing this thing for half an hour?!? This is the point I used to solicit donations, back when life was less kind. These days I'd prefer to see your money reach <a class="nag" href="https://www.refuweegee.co.uk/your-donations" target="_blank">Refuweegee</a>, a charity whose work I admire!
+-            Whoa! You've been playing this thing for half an hour?!? Why not give a few bucks to <a href="https://transequality.org/ways-to-give" target="_blank">a good cause</a> to show your appreciation.
       </div>
       <form id="nagForm" class="alignCenter margin10">
         <input type="submit" id="nagOK" class="dialogOK" value="OK">

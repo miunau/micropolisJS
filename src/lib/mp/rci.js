@@ -10,6 +10,7 @@ import * as jqueryProxy from 'jquery'
 
 import { MiscUtils } from './miscUtils';
 import { VALVES_UPDATED } from './messages';
+
 const jq = (jqueryProxy).default || jqueryProxy;
 
 
@@ -114,7 +115,6 @@ RCI.prototype.update = function(data) {
   if (!this._initialised) {
     // The canvas is assumed to fill its container on-screen
     var rect = this._canvas.parentNode.getBoundingClientRect();
-    console.log('rect', rect, this._canvas.parentNode);
     this._canvas.width = rect.width;
     this._canvas.height = rect.height;
     this._canvas.style.margin = '0';

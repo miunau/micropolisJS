@@ -34,6 +34,7 @@ import { Simulation } from './simulation';
 import { Storage } from './storage';
 import { Text } from './text';
 import { TouchWarnWindow } from './touchWarnWindow';
+
 const jq = (jqueryProxy).default || jqueryProxy;
 
 

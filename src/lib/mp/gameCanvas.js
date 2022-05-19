@@ -16,6 +16,7 @@ import { MouseBox } from './mouseBox';
 import { Position } from './position';
 import { TILE_INVALID } from "./tileValues";
 import { TileSet } from './tileSet';
+
 const jq = (jqueryProxy).default || jqueryProxy;
 
 
@@ -121,7 +122,6 @@ GameCanvas.prototype.init = function(map, tileSet, spriteSheet, animationManager
 
   this.paint(null, null);
 };
-
 
 GameCanvas.prototype._calculateDimensions = function(force) {
   force = force || false;

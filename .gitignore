@@ -1,5 +1,6 @@
 *.swp
 *.swo
+.cloudflare/
 coverage/
 dist/
 node_modules/

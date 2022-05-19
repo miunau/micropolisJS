@@ -20,9 +20,6 @@ const jq = (jqueryProxy).default || jqueryProxy;
 
 function setup() {
 
-
-  console.log('setting up')
-
   var fallbackImage, tileSet, snowTileSet;
 
   /*
