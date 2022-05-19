@@ -1,10 +1,10 @@
 <header id="aboutHeader" class="chunk border-bottom padding10">
   <div class="left inlineblock">
-    <h1 id="title" class="white fontlarge"><a href="index.html">micropolisJS</a></h1>
+    <h1 id="title" class="white fontlarge"><a href="index.html">micropolisJS Online</a></h1>
   </div>
   <nav class="white right padding10 inlineblock">
     <ul>
-      <li class="padding10"><a href="about.html">About</a></li>
+      <li class="padding10"><a href="/">Game</a></li>
       <li class="padding10"><a href="https://github.com/miunau/micropolisJS">GitHub</a></li>
     </ul>
   </nav>
@@ -12,9 +12,8 @@
 <main id="aboutMain">
   <div id="aboutContainer" class="mintcream open padding10">
     <div id="appeal" class="padding10">
-      <h2 class="alignCenter chunk">Support micropolisJS</h2>
-      <p><a href="http://www.graememcc.co.uk/2013/10/27/reticulating-splines">This is just the beginning</a>. <s>Please <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TV83GP5CJGL3Q&lc=GB&item_name=micropolisJS&no_note=1&no_shipping=1&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted">support micropolisJS</a>. Allow me to develop it further and make it better! Let's make it the best old-school-retro-but-really-running-on-modern-open-web-technologies city simulator&trade; anywhere!</s>. Edit: Mar 7, 2022: I no longer need donations to keep this alive, and can't promise to get back to it any time soon. However, if it entertained you then a donation to <a href="https://www.refuweegee.co.uk/your-donations">Refuweegee</a>, a charity that does great work assisting refugees in Scotland, would be welcomed.</p>
-      <p>Oh, and you absolutely should donate to <a href="https://one.laptop.org/action/donate">One Laptop Per Child</a> too.</p>
+      <h2 class="alignCenter chunk">Did you enjoy micropolisJS?</h2>
+      <p>You absolutely should donate to <a href="https://transequality.org/ways-to-give"> National Center for Transgender Equality (US)</a> or <a href="https://mermaidsuk.org.uk/">Mermaids (UK)</a>.</p>
     </div>
     <h3 class="alignCenter chunk">Welcome to your city!</h3>
     <p>
@@ -65,8 +64,3 @@
     </ul>
   </div>
 </main>
-<footer id="aboutFooter" class="alignCenter chunk white padding10">
-  Enjoyed micropolisJS? <a href="https://www.refuweegee.co.uk/your-donations">Click here to donate to a charity whose work I love!</a>
-    <div id="author" class="open">Brought to you by <a rel="author" href="http://www.graememcc.co.uk" target="_blank">Graeme McCutcheon</a><i><a rel="author" href="https://twitter.com/graememcc" target="_blank">(@graememcc)</a></i> and <a rel="author" href="https://github.com/graememcc/micropolisJS/graphs/contributors" target="_blank">contributors</a>
-    </div>
-</footer>

@@ -57,6 +57,7 @@ function Game(gameMap, tileSet, snowTileSet, spriteSheet, difficulty, name) {
   this.snowTileSet = snowTileSet;
   this.defaultSpeed = Simulation.SPEED_MED;
   this.simulation = new Simulation(this.gameMap, difficulty, this.defaultSpeed, savedGame);
+  this._isServer = false;
 
   this.name = name || 'MyTown';
   this.everClicked = false;
@@ -670,6 +671,8 @@ var tick = function() {
     // Run the sim
     this.simulation.simTick();
   }
+
+  
 
   // Run this even when paused: you can still build when paused
   this.mouse = this.calculateMouseForPaint();

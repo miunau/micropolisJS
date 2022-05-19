@@ -432,6 +432,10 @@ nav li {
   border-bottom: 1px solid #666;
 }
 
+.miscButton {
+  color: white;
+}
+
 #miscButtons .inner {
   display: flex;
   flex-direction: row;
@@ -503,7 +507,7 @@ nav li {
   position: absolute;
   border-bottom: 1px solid #666;
   border-right: 1px solid #666;
-  top: 444px;
+  top: 443px;
   left: 0;
   width: 118px;
   height: 118px;
@@ -612,6 +616,11 @@ nav li {
 
 #disasterRequest, #disasterHeader {
   background-color: red;
+  color: white;
+}
+
+#goOnlineRequest { 
+  background-color: green !important;
   color: white;
 }
 

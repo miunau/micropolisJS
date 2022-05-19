@@ -1,9 +1,12 @@
 *.swp
 *.swo
 .cloudflare/
+**/.cloudflare/
 coverage/
 dist/
 node_modules/
+**/node_modules/
+**/**/node_modules/
 TODO
 .DS_Store
 node_modules

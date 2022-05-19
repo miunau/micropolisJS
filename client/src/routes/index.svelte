@@ -15,7 +15,7 @@
 <img id="sprites" class="imageData" src="images/sprites.png" alt="These are the game's sprites">
 <header id="header" class="chunk border-bottom padding10">
   <div class="left inlineblock">
-    <h1 id="title" class="white fontlarge">micropolisJS Online</h1>
+    <h1 id="title" class="white fontlarge">micropolisJS ONLINE</h1>
   </div>
   <nav class="white right padding10 inlineblock">
     <ul>
@@ -99,6 +99,9 @@
         </div>
         <div>
           <button id="pauseRequest" class="miscButton">Pause</button>
+        </div>
+        <div>
+          <button id="goOnlineRequest" class="miscButton">Go online</button>
         </div>
       </div>
     </div>
@@ -278,11 +281,34 @@
           <dt class="evalItem statisticsItem">Game Level:</dt><dd class="elided statisticsRight evalItem evalRight" id="evalLevel"></dd>
           <dt class="evalItem statisticsItem">Score:</dt><dd class="elided statisticsRight evalItem evalRight" id="evalScore"></dd>
           <dt class="evalItem statisticsItem">Annual change:</dt><dd class=" elided statisticsRight evalItem evalRight" id="evalScoreDelta"></dd>
-  </dl>
-</section>
+        </dl>
+      </section>
       <form id="evalButtons" class="alignCenter margin10">
         <input type="submit" id="evalOK" class="width140 dialogOK" value="OK">
       </form>
+    </div>
+  </div>
+  <div class="modal shadow" id="onlineWindow">
+    <header id="evalHeader" class="evalHeader padding10 chunk alignCenter">
+       Online
+    </header>
+    <div id="onlineContainer" class="padding10 open">
+      <section id="onlineSettings">
+        <h2 class="alignCenter">Settings</h2>
+        <form id="budgetForm">
+          <div id="onlineInfo" class="elided budgetData">Online status: <span id="onlineStatus"></span></div>
+          <div id="playersInfo" class="elided budgetRight budgetData">Number of players: <span id="numberOfPlayers"></span></div>
+          <input type="checkbox" id="enableOnline" data-source="onlineStatus">
+          <div>
+            <label for="enableOnline" class="elided" id="enableOnlineLabel">Enable online play</label>
+          </div>
+          <div></div>
+          <div id="onlineButtons" class="alignCenter">
+            <button id="onlineCancel" class="width140 cancel">Cancel</button>
+            <input type="submit" id="onlineOK" class="width140 dialogOK" value="OK">
+          </div>
+        </form>
+      </section>
     </div>
   </div>
   <div class="hidden modal shadow" id="disasterWindow">

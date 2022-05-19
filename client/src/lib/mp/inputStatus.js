@@ -152,7 +152,6 @@ var getRelativeCoordinates = function(e) {
 
 
 var mouseEnterHandler = function(e) {
-  console.log(this);
   if (this.currentTool === null || this.currentTool === undefined)
     return;
 
