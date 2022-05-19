@@ -7,14 +7,15 @@
  *
  */
 
-import { forEachCardinalDirection } from './direction';
+import { DIRT, POWERBASE, ROADBASE } from "./tileValues";
+
 import { MiscUtils } from './miscUtils';
 import { Position } from './position';
 import { Random } from './random';
 import { SPRITE_HELICOPTER } from './spriteConstants';
 import { SpriteUtils } from './spriteUtils';
 import { TileUtils } from './tileUtils';
-import { DIRT, POWERBASE, ROADBASE } from "./tileValues";
+import { forEachCardinalDirection } from './direction';
 
 function Traffic(map, spriteManager) {
   this._map = map;
@@ -29,6 +30,7 @@ Traffic.prototype.makeTraffic = function(x, y, blockMaps, destFn) {
   var pos = new Position(x, y);
 
   if (this.findPerimeterRoad(pos)) {
+
     if (this.tryDrive(pos, destFn)) {
       this.addToTrafficDensityMap(blockMaps);
       return Traffic.ROUTE_FOUND;
@@ -98,17 +100,17 @@ var MAX_TRAFFIC_DISTANCE = 30;
 
 Traffic.prototype.tryDrive = function(startPos, destFn) {
   var dirLast;
-  var drivePos = new Position(startPos);
+  var drivePos = new Position(startPos.x, startPos.y);
 
   /* Maximum distance to try */
   for (var dist = 0; dist < MAX_TRAFFIC_DISTANCE; dist++) {
     var  dir = this.tryGo(drivePos, dirLast);
     if (dir) {
-      drivePos = Position.move(pos, dir);
+      drivePos = Position.move(drivePos, dir);
       dirLast = dir.oppositeDirection();
 
       if (dist & 1)
-        this._stack.push(new Position(drivePos));
+        this._stack.push(new Position(drivePos.x, drivePos.y));
 
       if (this.driveDone(drivePos, destFn))
         return true;
@@ -133,7 +135,8 @@ Traffic.prototype.tryGo = function(pos, dirLast) {
   var count = 0;
 
   forEachCardinalDirection(dir => {
-    if (dir != dirLast && TileUtils.isDriveable(this._map.getTileFromMapOrDefault(pos, dir, DIRT))) {
+    const tile = this._map.getTileFromMapOrDefault(pos, dir, DIRT);
+    if (dir != dirLast && TileUtils.isDriveable(tile)) {
       directions.push(dir);
       count++;
     }

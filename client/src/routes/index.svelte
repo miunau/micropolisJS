@@ -15,7 +15,7 @@
 <img id="sprites" class="imageData" src="images/sprites.png" alt="These are the game's sprites">
 <header id="header" class="chunk border-bottom padding10">
   <div class="left inlineblock">
-    <h1 id="title" class="white fontlarge">micropolisJS ONLINE</h1>
+    <h1 id="title" class="white fontlarge">micropolisJS online</h1>
   </div>
   <nav class="white right padding10 inlineblock">
     <ul>
@@ -288,7 +288,7 @@
       </form>
     </div>
   </div>
-  <div class="modal shadow" id="onlineWindow">
+  <div class="modal shadow hidden" id="onlineWindow">
     <header id="evalHeader" class="evalHeader padding10 chunk alignCenter">
        Online
     </header>

@@ -136,7 +136,7 @@ function Game(gameMap, tileSet, snowTileSet, spriteSheet, difficulty, name) {
 
   this.budgetWindow = new BudgetWindow(opacityLayerID, 'budget');
   this.budgetWindow.addEventListener(Messages.BUDGET_WINDOW_CLOSED, this.handleBudgetWindowClosure.bind(this));
-  this.inputStatus.addEventListener(Messages.BUDGET_REQUESTED, this.handleBudgetRequest.bind(this));
+  this.inputStatus.addEventListener(Messages.BUDGET_WINDOW_REQUESTED, this.handleBudgetRequest.bind(this));
 
   // ... and also the disaster window
   this.disasterWindow = new DisasterWindow(opacityLayerID, 'disasterWindow');
@@ -245,15 +245,23 @@ function Game(gameMap, tileSet, snowTileSet, spriteSheet, difficulty, name) {
   this.animate();
 }
 
-
 Game.prototype.save = function() {
   var saveData = {name: this.name, everClicked: this.everClicked};
   BaseTool.save(saveData);
   this.simulation.save(saveData);
+  console.log('final save data', saveData);
 
   Storage.saveGame(saveData);
 };
 
+Game.prototype.sendState = function() {
+  var state = {name: this.name, everClicked: this.everClicked};
+  BaseTool.save(state);
+  this.simulation.save(state);
+  console.log('state to send', state);
+
+  Storage.saveGame(saveData);
+}
 
 Game.prototype.load = function(saveData) {
   this.name = saveData.name;

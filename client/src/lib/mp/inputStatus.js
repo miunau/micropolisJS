@@ -70,6 +70,7 @@ var InputStatus = EventEmitter(function(map, tileWidth) {
   jq('#settingsRequest').click(settingsHandler.bind(this));
   jq('#saveRequest').click(saveHandler.bind(this));
   jq('#debugRequest').click(debugHandler.bind(this));
+  jq('#onlineRequest').click(onlineHandler.bind(this));
 });
 
 
@@ -300,14 +301,13 @@ var makeHandler = function(message) {
   };
 };
 
-
-var budgetHandler = makeHandler('BUDGET_REQUESTED');
+var onlineHandler = makeHandler('ONLINE_WINDOW_REQUESTED');
+var budgetHandler = makeHandler('BUDGET_WINDOW_REQUESTED');
 var debugHandler = makeHandler('DEBUG_WINDOW_REQUESTED');
 var disasterHandler = makeHandler('DISASTER_REQUESTED');
 var evalHandler = makeHandler('EVAL_REQUESTED');
 var screenshotHandler = makeHandler('SCREENSHOT_WINDOW_REQUESTED');
 var settingsHandler = makeHandler('SETTINGS_WINDOW_REQUESTED');
 var saveHandler = makeHandler('SAVE_REQUESTED');
-
 
 export { InputStatus };

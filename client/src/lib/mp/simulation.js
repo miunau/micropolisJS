@@ -7,18 +7,19 @@
  *
  */
 
+import * as Messages from './messages';
+
 import { BlockMap } from './blockMap';
 import { BlockMapUtils } from './blockMapUtils';
 import { Budget } from './budget';
 import { Census } from './census';
 import { Commercial } from './commercial';
 import { DisasterManager } from './disasterManager';
-import { EventEmitter } from './eventEmitter';
 import { EmergencyServices } from './emergencyServices';
 import { Evaluation } from './evaluation';
+import { EventEmitter } from './eventEmitter';
 import { Industrial } from './industrial';
 import { MapScanner } from './mapScanner';
-import * as Messages from './messages';
 import { MiscTiles } from './miscTiles';
 import { MiscUtils } from './miscUtils';
 import { PowerManager } from './powerManager';

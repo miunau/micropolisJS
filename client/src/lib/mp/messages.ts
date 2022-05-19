@@ -7,11 +7,9 @@
  *
  */
 
-export const ZOOM_IN = 'Zoom in';
-export const ZOOM_OUT = 'Zoom out';
 export const AUTOBUDGET_CHANGED = "Autobudget changed";
 export const BUDGET_NEEDED = "User needs to budget";
-export const BUDGET_REQUESTED = "Budget window requested";
+export const BUDGET_WINDOW_REQUESTED = "Budget window requested";
 export const BUDGET_WINDOW_CLOSED = "Budget window closed";
 export const BLACKOUTS_REPORTED = "Blackouts reported";
 export const CLASSIFICATION_UPDATED = "Classification updated";
@@ -89,6 +87,8 @@ export const TRAFFIC_JAMS = "Traffic jams reported";
 export const TRAIN_CRASHED = "Train crashed";
 export const VALVES_UPDATED = "Valves updated";
 export const WELCOME = "Welcome to micropolisJS";
+export const ONLINE_WINDOW_REQUESTED = "Online window requested";
+export const ONLINE_WINDOW_CLOSED = "Online window closed";
 
 export const DISASTER_MESSAGES = [
   EARTHQUAKE,
