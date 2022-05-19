@@ -6,10 +6,12 @@
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { MiscUtils } from './miscUtils';
 import { VALVES_UPDATED } from './messages';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 function RCI(parentNode, eventSource, id) {
   if (arguments.length < 2)
@@ -35,7 +37,7 @@ function RCI(parentNode, eventSource, id) {
   // is 1 unit of padding
   this._padding = 3; // 3 rectangles in each bit of padding
   this._buckets = 10; // 0.2000 is scaled in to 10 buckets
-  this._rectSize = 5; // Each rect is 5px
+  this._rectSize = 4; // Each rect is 5px
   this._scale = Math.floor(2000 / this._buckets);
 
   this._canvas = jq('<canvas></canvas>', {id: id})[0];
@@ -83,7 +85,7 @@ RCI.prototype._drawValue = function(ctx, index, value) {
   if (index > 1)
     value = Math.floor(2000/1500 * value);
 
-  var colours = ['rgb(0,255,0)', 'rgb(0, 0, 139)', 'rgb(255, 255, 0)'];
+  var colours = ['rgb(0,255,0)', 'rgb(90, 90, 243)', 'rgb(255, 255, 0)'];
   var barHeightRect = Math.floor(Math.abs(value) / this._scale);
   var barStartY = (value >= 0) ?
     this._buckets + this._padding - barHeightRect : this._buckets + 2 * this._padding;
@@ -112,6 +114,7 @@ RCI.prototype.update = function(data) {
   if (!this._initialised) {
     // The canvas is assumed to fill its container on-screen
     var rect = this._canvas.parentNode.getBoundingClientRect();
+    console.log('rect', rect, this._canvas.parentNode);
     this._canvas.width = rect.width;
     this._canvas.height = rect.height;
     this._canvas.style.margin = '0';

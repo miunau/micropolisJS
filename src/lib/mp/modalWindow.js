@@ -7,8 +7,12 @@
  *
  */
 
+import * as jqueryProxy from 'jquery'
+
 import { EventEmitter } from './eventEmitter';
 import { MiscUtils } from './miscUtils';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var ModalWindow = function(constructorFunction, focusID) {
   focusID = focusID ? MiscUtils.normaliseDOMid(focusID) : null;

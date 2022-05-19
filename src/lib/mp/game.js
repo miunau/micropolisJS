@@ -7,7 +7,7 @@ import * as Messages from './messages';
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { BaseTool } from './baseTool';
 import { BudgetWindow } from './budgetWindow';
@@ -34,6 +34,8 @@ import { Simulation } from './simulation';
 import { Storage } from './storage';
 import { Text } from './text';
 import { TouchWarnWindow } from './touchWarnWindow';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var disasterTimeout = 20 * 1000;
 

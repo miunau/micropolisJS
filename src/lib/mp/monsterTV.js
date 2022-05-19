@@ -7,12 +7,15 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { SPRITE_DYING, SPRITE_MOVED } from './messages';
 
 import { EventEmitter } from './eventEmitter';
 import { GameCanvas } from './gameCanvas';
+const jq = (jqueryProxy).default || jqueryProxy;
+
+
 
 var TIMEOUT_SECS = 10;
 

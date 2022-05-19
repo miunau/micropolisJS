@@ -4,6 +4,7 @@
 
   onMount(() => {
 
+    console.log('setup', setup);
     setup();
 
   });
@@ -19,8 +20,8 @@
   </div>
   <nav class="white right padding10 inlineblock">
     <ul>
-      <li class="padding10"><a href="about.html" target="_blank">About</a></li>
-      <li class="padding10"><a href="https://github.com/graememcc/micropolisJS" target="_blank">GitHub</a></li>
+      <li class="padding10"><a href="/about" target="_blank">About</a></li>
+      <li class="padding10"><a href="https://github.com/miunau/micropolisJS" target="_blank">GitHub</a></li>
     </ul>
   </nav>
 </header>
@@ -55,9 +56,9 @@
         </div>
       </form>
     </div>
-    <div id="infobar" class="alignCenter leftedge open width140 padding10 controlShadow mintcream z1 initialHidden">
+    <div id="infobar" class="alignCenter open z1 initialHidden">
       <div class="inner">
-        <div class="semibold chunk">
+        <div>
           <span id="name">Your Name Here</span>
         </div>
         <div>
@@ -73,7 +74,7 @@
           <span id="cclass">VILLAGE</span>
         </div>
         <div class="elided">
-          Population:<br /> <span id="population">0</span>
+          Population: <span id="population">0</span>
         </div>
       </div>
     </div>
@@ -102,26 +103,57 @@
         </div>
       </div>
     </div>
-    <div id="RCIContainer" class="controlShadow leftedge width140 padding10 mintcream z1 initialHidden"></div>
-    <div id="controls" class="controlShadow mintcream z1 initialHidden rightedge open">
-      <div id="toolInfo" class="alignCenter"><span id="toolOutput">Tools</span></div>
+    <div id="RCIContainer" class="z1 initialHidden"></div>
+    <div id="controls" class="z1 initialHidden rightedge open">
       <div id="buttons">
-        <button id="residentialButton" data-size="3" data-tool="residential" data-colour="lime" class="toolButton unselected">Residential $100</button>
-        <button id="nuclearButton" data-size="4" data-tool="nuclear" data-colour="mistyrose" class="toolButton unselected">Nuclear $5000</button>
-        <button id="commercialButton" data-size="3" data-tool="commercial" data-colour="blue" class="toolButton unselected">Commercial $100</button>
-        <button id="coalButton" data-size="4" data-tool="coal" data-colour="gray" class="toolButton unselected">Coal $3000</button>
-        <button id="industrialButton" data-size="3" data-tool="industrial" data-colour="yellow" class="toolButton unselected">Industrial $100</button>
-        <button id="policeButton" data-size="3" data-tool="police" data-colour="darkblue" class="toolButton unselected">Police $500</button>
-        <button id="roadButton" data-size="1" data-tool="road" data-colour="black" class="toolButton unselected">Road $10</button>
-        <button id="fireButton" data-size="3" data-tool="fire" data-colour="red" class="toolButton unselected">Fire $500</button>
-        <button id="railButton" data-size="1" data-tool="rail" data-colour="brown" class="toolButton unselected">Rail $20</button>
-        <button id="portButton" data-size="4" data-tool="port" data-colour="dodgerblue" class="toolButton unselected">Port $3000</button>
-        <button id="wireButton" data-size="1" data-tool="wire" data-colour="khaki" class="toolButton unselected">Wire $5</button>
-        <button id="stadiumButton" data-size="4" data-tool="stadium" data-colour="indigo" class="toolButton unselected">Stadium $5000</button>
-        <button id="bulldozerButton" data-size="1" data-tool="bulldozer" data-colour="salmon" class="toolButton unselected">Bulldozer $1</button>
-        <button id="airportButton" data-size="6" data-tool="airport" data-colour="violet" class="toolButton unselected">Airport $10000</button>
-        <button id="queryButton" data-size="1" data-tool="query" data-colour="cyan" class="toolButton unselected">Query</button>
-        <button id="parkButton" data-size="1" data-tool="park" data-colour="darkgreen" class="toolButton unselected">Park $10</button>
+        <button id="residentialButton" data-size="3" data-tool="residential" data-colour="lime" class="toolButton unselected">
+          <img src="/icons/residential.png" width="24" height="24" alt="Residential ($100)">
+        </button>
+        <button id="nuclearButton" data-size="4" data-tool="nuclear" data-colour="mistyrose" class="toolButton unselected">
+          <img src="/icons/nuclear.png" width="24" height="24" alt="Nuclear ($1000)">
+        </button>
+        <button id="commercialButton" data-size="3" data-tool="commercial" data-colour="blue" class="toolButton unselected">
+          <img src="/icons/commercial.png" width="24" height="24" alt="Commercial ($100)">
+        </button>
+        <button id="coalButton" data-size="4" data-tool="coal" data-colour="gray" class="toolButton unselected">
+          <img src="/icons/coal.png" width="24" height="24" alt="Coal ($300)">
+        </button>
+        <button id="industrialButton" data-size="3" data-tool="industrial" data-colour="yellow" class="toolButton unselected">
+          <img src="/icons/industrial.png" width="24" height="24" alt="Industrial ($100)">
+        </button>
+        <button id="policeButton" data-size="3" data-tool="police" data-colour="darkblue" class="toolButton unselected">
+          <img src="/icons/police.png" width="24" height="24" alt="Police ($500)">
+        </button>
+        <button id="roadButton" data-size="1" data-tool="road" data-colour="black" class="toolButton unselected">
+          <img src="/icons/road.png" width="24" height="24" alt="Road ($10)">
+        </button>
+        <button id="fireButton" data-size="3" data-tool="fire" data-colour="red" class="toolButton unselected">
+          <img src="/icons/fire.png" width="24" height="24" alt="Fire ($500)">
+        </button>
+        <button id="railButton" data-size="1" data-tool="rail" data-colour="brown" class="toolButton unselected">
+          <img src="/icons/rail.png" width="24" height="24" alt="Rail ($10)">
+        </button>
+        <button id="portButton" data-size="4" data-tool="port" data-colour="dodgerblue" class="toolButton unselected">
+          <img src="/icons/port.png" width="24" height="24" alt="Port ($3000)">
+        </button>
+        <button id="wireButton" data-size="1" data-tool="wire" data-colour="khaki" class="toolButton unselected">
+          <img src="/icons/wire.png" width="24" height="24" alt="Wire ($5)">
+        </button>
+        <button id="stadiumButton" data-size="4" data-tool="stadium" data-colour="indigo" class="toolButton unselected">
+          <img src="/icons/stadium.png" width="24" height="24" alt="Stadium ($5000)">
+        </button>
+        <button id="bulldozerButton" data-size="1" data-tool="bulldozer" data-colour="salmon" class="toolButton unselected">
+          <img src="/icons/bulldozer.png" width="24" height="24" alt="Bulldozer ($1)">
+        </button>
+        <button id="airportButton" data-size="6" data-tool="airport" data-colour="violet" class="toolButton unselected">
+          <img src="/icons/airport.png" width="24" height="24" alt="Airport ($10000)">
+        </button>
+        <button id="queryButton" data-size="1" data-tool="query" data-colour="cyan" class="toolButton unselected">
+          <img src="/icons/query.png" width="24" height="24" alt="Query">
+        </button>
+        <button id="parkButton" data-size="1" data-tool="park" data-colour="darkgreen" class="toolButton unselected">
+          <img src="/icons/park.png" width="24" height="24" alt="Park ($10)">
+        </button>
       </div>
     </div>
     <div id="tw" class="z1 rightedge initialHidden">
@@ -144,7 +176,7 @@
         <button id="debugRequest">Debug</button>
       </div>
     </div>
-    <div id="notifications" class="initialHidden neutral z1 rightedge alignCenter elided padding10 controlShadow"></div>
+    <div id="notifications" class="open initialHidden z1 elided"></div>
     <div id="tooSmall" data-hasscript="false" class="mintcream open"><div id="tooSmallInner" class="alignCenter padding10"><h2 class="chunk">Uh-oh!</h2><p>This screen is too small&mdash;I won't be able to fit in all the controls, buttons and gizmos! Sorry!</p></div></div>
     <noscript>
       <div id="noscript" class="open mintcream centred padding10">
@@ -157,7 +189,7 @@
   <footer id="footer" class="alignCenter chunk white padding10">
     Enjoyed micropolisJS online? <a target="_blank" href="https://transequality.org/ways-to-give">Support an organisation we love!</a>
     <div id="author" class="open">
-      micropolisJS is by <a rel="author" href="http://www.graememcc.co.uk" target="_blank">Graeme McCutcheon</a><i><a rel="author" href="https://twitter.com/graememcc" target="_blank">(@graememcc)</a></i> and <a rel="author" href="https://github.com/graememcc/micropolisJS/graphs/contributors" target="_blank">contributors</a> - this version by  <a rel="author" href="http://www.miunau.com" target="_blank">miunau</a><i><a rel="author" href="https://twitter.com/miunau" target="_blank">(@miunau)</a></i>
+      micropolisJS is by <a rel="author" href="http://www.graememcc.co.uk" target="_blank">Graeme McCutcheon</a><i><a rel="author" href="https://twitter.com/graememcc" target="_blank">(@graememcc)</a></i> and <a rel="author" href="https://github.com/graememcc/micropolisJS/graphs/contributors" target="_blank">contributors</a> - this version by  <a rel="author" href="http://www.miunau.com" target="_blank">miunau</a><i><a rel="author" href="https://twitter.com/miuott" target="_blank">(@miuott)</a></i>
       <!--<div id="build">Build: <%= htmlWebpackPlugin.options.gitHash %></div>-->
     </div>
   </footer>

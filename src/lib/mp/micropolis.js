@@ -7,7 +7,7 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { Config } from './config';
 import { SplashScreen } from './splashScreen';
@@ -15,8 +15,13 @@ import { TileSet } from './tileSet';
 import { TileSetSnowURI } from './tileSetSnowURI';
 import { TileSetURI } from './tileSetURI';
 
+const jq = (jqueryProxy).default || jqueryProxy;
+
+
 function setup() {
 
+
+  console.log('setting up')
 
   var fallbackImage, tileSet, snowTileSet;
 

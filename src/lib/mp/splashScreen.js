@@ -6,7 +6,7 @@
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { Config } from './config';
 import { Game } from './game';
@@ -14,6 +14,8 @@ import { MapGenerator } from './mapGenerator';
 import { Simulation } from './simulation';
 import { SplashCanvas } from './splashCanvas';
 import { Storage } from './storage';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 /*
  *

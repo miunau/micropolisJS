@@ -7,10 +7,12 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { MiscUtils } from './miscUtils';
 import { Text } from './text';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var TIMEOUT_SECS = 30;
 

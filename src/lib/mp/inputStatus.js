@@ -7,12 +7,14 @@ import * as Messages from './messages';
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { EventEmitter } from './eventEmitter';
 import { GameCanvas } from './gameCanvas';
 import { GameTools } from './gameTools';
 import { MiscUtils } from './miscUtils';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var InputStatus = EventEmitter(function(map, tileWidth) {
   this.gameTools = new GameTools(map);
@@ -147,7 +149,8 @@ var getRelativeCoordinates = function(e) {
 
 
 var mouseEnterHandler = function(e) {
-  if (this.currentTool === null)
+  console.log(this);
+  if (this.currentTool === null || this.currentTool === undefined)
     return;
 
   jq(this.canvasID).on('mousemove', this.mouseMoveHandler);

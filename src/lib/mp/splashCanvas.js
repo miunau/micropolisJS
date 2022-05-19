@@ -7,9 +7,11 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { MiscUtils } from './miscUtils';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 /*
  *

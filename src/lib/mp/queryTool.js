@@ -7,13 +7,15 @@ import * as TileValues from "./tileValues";
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { BaseTool } from './baseTool';
 import { Config } from './config';
 import { EventEmitter } from './eventEmitter';
 import { QUERY_WINDOW_NEEDED } from './messages';
 import { Text } from './text';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var makeTool = BaseTool.makeTool;
 var QueryTool = EventEmitter(makeTool(function(map) {

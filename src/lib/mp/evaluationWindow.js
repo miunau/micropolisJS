@@ -6,11 +6,13 @@
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { EVAL_WINDOW_CLOSED } from './messages';
 import { ModalWindow } from './modalWindow';
 import { Text } from './text';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var EvaluationWindow = ModalWindow(function() {
   jq(evaluationFormID).on('submit', submit.bind(this));

@@ -6,11 +6,13 @@
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { DISASTER_WINDOW_CLOSED } from './messages';
 import { MiscUtils } from './miscUtils';
 import { ModalWindow } from './modalWindow';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var disasterSelectID = '#disasterSelect';
 var disasterCancelID = '#disasterCancel';

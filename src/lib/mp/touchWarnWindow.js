@@ -7,10 +7,12 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { ModalWindow } from './modalWindow';
 import { TOUCH_WINDOW_CLOSED } from './messages';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var TouchWarnWindow = ModalWindow(function() {
   jq(touchFormID).on('submit', submit.bind(this));

@@ -6,12 +6,14 @@
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { MiscUtils } from './miscUtils';
 import { ModalWindow } from './modalWindow';
 import { SETTINGS_WINDOW_CLOSED } from './messages';
 import { Simulation } from './simulation';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var SettingsWindow = ModalWindow(function() {
   jq(settingsCancelID).on('click', cancel.bind(this));

@@ -6,12 +6,14 @@
  * http://micropolisjs.graememcc.co.uk/COPYING
  *
  */
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { Config } from './config';
 import { MiscUtils } from './miscUtils';
 import { ModalWindow } from './modalWindow';
 import { QUERY_WINDOW_CLOSED } from './messages';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var QueryWindow = ModalWindow(function() {
   this._debugToggled = false;

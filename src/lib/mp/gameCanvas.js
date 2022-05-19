@@ -7,7 +7,7 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { AnimationManager } from './animationManager';
 import { GameMap } from './gameMap';
@@ -16,6 +16,8 @@ import { MouseBox } from './mouseBox';
 import { Position } from './position';
 import { TILE_INVALID } from "./tileValues";
 import { TileSet } from './tileSet';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 function GameCanvas(id, parentNode) {
   if (!(this instanceof GameCanvas))

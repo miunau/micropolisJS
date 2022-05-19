@@ -7,10 +7,12 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { CONGRATS_WINDOW_CLOSED } from './messages';
 import { ModalWindow } from './modalWindow';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var CongratsWindow = ModalWindow(function() {
   jq(congratsFormID).on('submit', submit.bind(this));

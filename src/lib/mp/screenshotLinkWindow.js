@@ -7,11 +7,13 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { MiscUtils } from './miscUtils';
 import { ModalWindow } from './modalWindow';
 import { SCREENSHOT_LINK_CLOSED } from './messages';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var ScreenshotLinkWindow = ModalWindow(function() {
   jq(screenshotLinkFormID).on('submit', submit.bind(this));

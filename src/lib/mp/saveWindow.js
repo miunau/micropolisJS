@@ -7,10 +7,12 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { ModalWindow } from './modalWindow';
 import { SAVE_WINDOW_CLOSED } from './messages';
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var SaveWindow = ModalWindow(function() {
   jq(saveFormID).on('submit', submit.bind(this));

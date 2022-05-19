@@ -7,11 +7,14 @@
  *
  */
 
-import * as jq from 'jquery';
+import * as jqueryProxy from 'jquery'
 
 import { BUDGET_WINDOW_CLOSED } from './messages';
 import { MiscUtils } from './miscUtils';
 import { ModalWindow } from './modalWindow';
+
+const jq = (jqueryProxy).default || jqueryProxy;
+
 
 var BudgetWindow = ModalWindow(function() {
   jq(budgetCancelID).on('click', cancel.bind(this));
